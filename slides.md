@@ -1,7 +1,17 @@
+
 BitTorrent, Streams and JavaScript
+
 
   Mathias Buus, @mafintosh
   https://github.com/mafintosh
+
+----
+
+I'm gonna talk about
+
+  1. BitTorrent
+  2. BitTorrent streaming
+  3. BitTorrent streaming in Javascript!
 
 ----
 
@@ -38,7 +48,6 @@ Scenario: What happens when 1.000.000 clients arrive?
 
 ----
 
-Server blows up because it cannot keep up with the traffic
 
             --_--
          (  -_    _).
@@ -249,32 +258,63 @@ NODE.JS STREAMS + BITTORRENT = <3 ?
 
 ----
 
-REAL TIME + NODE.JS STREAMS + BITTORRENT = <3
+REALTIME + NODE.JS STREAMS + BITTORRENT = <3
 
 ----
 
-Trival implementation:
+We wants pieces 1 - 10
 
-stream wants pieces 1 - 10
+Trivial implementation:
 
-peer1 --> piece1 --> stream
-peer2 --> piece2 --> stream
-etc
+request one piece from each peer
+
+  |     | <--- piece1 from peer1
+  |  S  | <--- piece2 from peer2
+  |  T  |      etc
+  |  R  |
+  |  E  |
+  |  A  |
+  |  M  |
+  |     |
 
 ----
 
 
-Risk of high latency ==> does not seem real time
+Risk of high latency ==> does not seem realtime
 
 
 ----
 
 Better implementation:
 
-find top peers (high speed, been succesful before)
+request the first piece from many peers
 
-top peers --> piece1     --> stream
-rest      --> piece2..10 --> stream
+  |     | <--- piece1 from peer1
+  |  S  |   |- piece1 from peer2
+  |  T  |   |- piece1 from peer3
+  |  R  |
+  |  E  | <--- pieceN from other peers
+  |  A  |
+  |  M  |
+  |     |
+
+----
+
+Even better implementation:
+
+maintain a list of fast peers
+use these peers to fetch important pieces
+
+  |     | <--- piece1 from fast peerX
+  |  S  |   |- piece1 from fast peerY
+  |  T  |   |- piece1 from fast peerZ
+  |  R  |
+  |  E  | <--- pieceN from other (slower) peers
+  |  A  |
+  |  M  |
+  |     |
+
+if a fast peer becomes slow swap him for another one
 
 ----
 
@@ -294,7 +334,7 @@ https://github.com/mafintosh/torrent-stream
 ----
 
 
-(mathias, show them the demo of torrent-stream)
+(@mafintosh, show them the demo of torrent-stream)
 
 
 ----
@@ -321,7 +361,7 @@ https://github.com/mafintosh/peerflix
 ----
 
 
-(mathias, show them the demo of peerflix)
+(@mafintosh, show them the demo of peerflix)
 
 
 ----
@@ -354,7 +394,17 @@ https://github.com/mafintosh/torrent-mount
 ----
 
 
-(mathias, show them the demo of torrent-mount)
+(@mafintosh, show them the demo of torrent-mount)
+
+
+----
+
+
+Modules summary
+
+https://github.com/mafintosh/torrent-stream
+https://github.com/mafintosh/peerflix
+https://github.com/mafintosh/torrent-mount
 
 
 ----
