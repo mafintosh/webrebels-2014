@@ -23,13 +23,13 @@ var i = -1
 var next = function() {
   i++
   if (i >= slides.length) i = slides.length-1
-  log(slides[i])
+  log(slides[i]+'\n')
 }
 
 var prev = function() {
   i--
   if (i < 0) i = 0
-  log(slides[i])
+  log(slides[i]+'\n')
 }
 
 next()

@@ -9,9 +9,9 @@ BitTorrent, Streams and JavaScript
 
 I'm gonna talk about
 
-  1. BitTorrent
+  1. What is BitTorrent?
   2. BitTorrent streaming
-  3. BitTorrent streaming in Javascript!
+  3. Mad science!
 
 ----
 
