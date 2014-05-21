@@ -7,6 +7,9 @@
     "single-line-log": "^0.4.0",
     "keypress": "^0.1.0"
   },
+  "bin": {
+	"mafintosh-webrebels-2014": "./index.js"
+  },
   "repository": {
     "type": "git",
     "url": "git://github.com/mafintosh/webrebels-2014"

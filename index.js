@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 var fs = require('fs')
 var keypress = require('keypress')
 var slides = fs.readFileSync(__dirname+'/slides.md')
