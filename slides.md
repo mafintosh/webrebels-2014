@@ -385,7 +385,36 @@ and just access them as any file?
 ----
 
 
-TORRENT-STREAM + FUSE = [head-explosion-animation]
+                                .--.
+                               /    \
+TORRENT-STREAM + FUSE =       ## a  a
+                              (   '._)
+                               |'-- |
+                             _.\___/_
+
+----
+
+
+                                .- - -.
+                               /       \
+TORRENT-STREAM + FUSE =       ##   X    X
+                              |         |
+                              (      '._)
+                               |  ' -- |
+                             _.\____ _/_
+
+
+----
+                                   --_--
+                                (  -_    _).
+                              ( ~       )   )
+                            (( )  (    )  ()  )
+TORRENT-STREAM + FUSE =      (.   )) (       )
+                               ``..     ..``
+                                    | |
+                                  (=| |=)
+                                    | |
+                                (../( )\.))
 
 
 ----
