@@ -423,7 +423,7 @@ TORRENT-STREAM + VLC = <3 <3 <3
 
 peerflix combines torrent-stream and vlc
 (the thing that made popcorn time stream torrents)
-(* i'm not part of popcorn time - please don't put me in jail)
+(* not part of popcorn time - please don't put me in jail)
 
   npm install -g peerflix
 
