@@ -1,6 +1,6 @@
 {
   "name": "mafintosh-webrebels-2014",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "my talk at webrebels 2014 in oslo, norway",
   "main": "index.js",
   "dependencies": {
