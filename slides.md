@@ -1,9 +1,16 @@
 
 
+
+
+
+
 BitTorrent, Streams and JavaScript
 
 
 ----
+
+
+
 
 
   Mathias Buus, @mafintosh
@@ -12,6 +19,8 @@ BitTorrent, Streams and JavaScript
 
 ----
 
+
+
 I'm gonna talk about
 
   1. What is BitTorrent?
@@ -19,6 +28,11 @@ I'm gonna talk about
   3. Mad science!
 
 ----
+
+
+
+
+
 
 BITTORRENT!
 
@@ -38,7 +52,7 @@ Normally when you fetch content online you do this
 
 This is nice and simple.
 
-Scenario: What happens when 1.000.000 clients arrive?
+What happens when 1.000.000 clients arrive?
 
 
    [client1] [client2] ... [client1M]
@@ -71,12 +85,15 @@ Scenario: What happens when 1.000.000 clients arrive?
 
 ----
 
+
+
 Idea!
 
 Remove the server and have all clients share data
 with each other
 
 ----
+
 
 
 
@@ -92,20 +109,22 @@ with each other
 
 ----
 
-Now if one of the clients blows up we just fetch data from someone else
+Now if one of the clients blows up we just fetch data
+from someone else
 
 
   :(    --->  [client2]
   ^       \        /
   |        \      /
   |        [client3]
-[client3]      \
+[client5]      \
                 \
                 ...
 
 ----
 
-Now if one of the clients blows up we just fetch data from someone else
+Now if one of the clients blows up we just fetch data
+from someone else
 
 
              [client2]
@@ -118,14 +137,20 @@ Now if one of the clients blows up we just fetch data from someone else
 
 ----
 
+
+
 So peer to peer seems nice...
 
 But can we trust data coming from clients?
-What if someone sends us something else instead of (bergen-to-oslo-train-video.mp4)?
+
+What if someone sends us something else
+instead of bergen-to-oslo-train-video.mp4?
 
 ----
 
-Let's start by dividing (bergen-to-oslo-train-video.mp4) into pieces and hash them
+
+Let's start by dividing bergen-to-oslo-train-video.mp4
+into pieces and hash each of them
 
 
 piece1  --> hash of piece1
@@ -146,7 +171,7 @@ We could store this data on a trusted server
               |
   (file-with-list-of-hashes)
               |
-          [server] - (hey remember that slide of me exploding)
+          [server] (hey remember that slide of me exploding)
 
 
 An OK solution but the list of hashes can be big
@@ -182,11 +207,17 @@ We use the info-hash to verify the hashes
 
 ----
 
+
+
+
 This is how BitTorrent fetches and verifies data!
 
-But how do we find peers that share our (bergen-to-oslo-train-video.mp4)?
+But how do we find peers that share
+bergen-to-oslo-train-video.mp4?
 
 ----
+
+
 
  (so distributed)
 
@@ -209,6 +240,8 @@ value  = my-ip : my-port
 
 ----
 
+
+
 The BitTorrent DHT is H U G E
 
 ~10.000.000 nodes at any time
@@ -230,16 +263,25 @@ Given an info hash (usually a magnet link)
 ----
 
 
+
+
+
 BITTORRENT IS PRETTY SWEET FOR SHARING CONTENT!
 
 
 ----
 
 
+
+
+
 I'm a node hacker
 
 
 ----
+
+
+
 
 Some things I like about node:
 
@@ -248,6 +290,9 @@ Some things I like about node:
 - npm
 
 ----
+
+
+
 
 Some things I like about node:
 
@@ -258,9 +303,15 @@ Some things I like about node:
 
 ----
 
+
+
+
 NODE.JS STREAMS + BITTORRENT = <3 ?
 
 ----
+
+
+
 
 REALTIME + NODE.JS STREAMS + BITTORRENT = <3
 
@@ -282,6 +333,8 @@ request one piece from each peer
   |     |
 
 ----
+
+
 
 
 Risk of high latency ==> does not seem realtime
@@ -324,11 +377,15 @@ if a fast peer becomes slow swap him for another one
 ----
 
 
-The top peers will always help fetch the most critical pieces concurrently
-(usually only a couple)
+
+
+The top peers will always help fetch the most
+critical pieces concurrently (usually only a couple)
 
 
 ----
+
+
 
 This is how torrent-stream works!
 
@@ -339,10 +396,14 @@ https://github.com/mafintosh/torrent-stream
 ----
 
 
+
+
 (@mafintosh, show them the demo of torrent-stream)
 
 
 ----
+
+
 
 
 What if we streamed video files as well?
@@ -351,10 +412,14 @@ What if we streamed video files as well?
 ----
 
 
+
+
 TORRENT-STREAM + VLC = <3 <3 <3
 
 
 ----
+
+
 
 peerflix combines torrent-stream and vlc
 (the thing that made popcorn time stream torrents)
@@ -366,16 +431,21 @@ https://github.com/mafintosh/peerflix
 ----
 
 
+
+
 (@mafintosh, show them the demo of peerflix)
 
 
 ----
 
 
+
+
 MAD SCIENCE TIME!
 
 
 ----
+
 
 
 What if we could mount the torrent in files instantly
@@ -419,13 +489,18 @@ TORRENT-STREAM + FUSE =      (.   )) (       )
 
 ----
 
-torrent-mount allows you to mount all files inside a torrent instantly
+
+
+torrent-mount allows you to mount all files inside
+a torrent instantly
 
   npm install -g torrent-mount
 
 https://github.com/mafintosh/torrent-mount
 
 ----
+
+
 
 
 (@mafintosh, show them the demo of torrent-mount)
@@ -444,6 +519,7 @@ https://github.com/mafintosh/torrent-mount
 ----
 
 
+
 People and things to follow
 
   feross      https://github.com/feross
@@ -452,6 +528,8 @@ People and things to follow
 Get involved!
 
 ----
+
+
 
 Takk! Questions?
 
