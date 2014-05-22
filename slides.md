@@ -1,9 +1,14 @@
 
+
 BitTorrent, Streams and JavaScript
+
+
+----
 
 
   Mathias Buus, @mafintosh
   https://github.com/mafintosh
+
 
 ----
 
