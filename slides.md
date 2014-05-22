@@ -52,7 +52,7 @@ Normally when you fetch content online you do this
 
 This is nice and simple.
 
-What happens when 1.000.000 clients arrive?
+What happens when 1 000 000 clients arrive?
 
 
    [client1] [client2] ... [client1M]
@@ -423,6 +423,7 @@ TORRENT-STREAM + VLC = <3 <3 <3
 
 peerflix combines torrent-stream and vlc
 (the thing that made popcorn time stream torrents)
+(* i'm not part of popcorn time - please don't put me in jail)
 
   npm install -g peerflix
 
