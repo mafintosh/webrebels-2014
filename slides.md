@@ -24,7 +24,7 @@ Normally when you fetch content online you do this
 
   [client]
      ^
-     | (epic movie)
+     | (bergen-to-oslo-train-video.mp4)
      |
   [server]
 
@@ -75,6 +75,7 @@ with each other
 
 
 
+
 [client1]  --->  [client2]
   ^      \        /
   |       \      /
@@ -115,11 +116,11 @@ Now if one of the clients blows up we just fetch data from someone else
 So peer to peer seems nice...
 
 But can we trust data coming from clients?
-What if someone sends us (fail movie) instead of (epic movie)?
+What if someone sends us something else instead of (bergen-to-oslo-train-video.mp4)?
 
 ----
 
-Let's start by dividing (epic movie) into pieces and hash them
+Let's start by dividing (bergen-to-oslo-train-video.mp4) into pieces and hash them
 
 
 piece1  --> hash of piece1
@@ -176,9 +177,9 @@ We use the info-hash to verify the hashes
 
 ----
 
-So we can fetch data and verify it
+This is how BitTorrent fetches and verifies data!
 
-But how do we find peers that share our (epic movie)?
+But how do we find peers that share our (bergen-to-oslo-train-video.mp4)?
 
 ----
 
@@ -203,7 +204,7 @@ value  = my-ip : my-port
 
 ----
 
-The DHT is H U G E
+The BitTorrent DHT is H U G E
 
 ~10.000.000 nodes at any time
 
@@ -213,7 +214,7 @@ https://dsn.tm.kit.edu/english/2936.php
 
 SUMMARY:
 
-Given an info hash
+Given an info hash (usually a magnet link)
 
 1. find a bunch of peers in the dht
 2. connect to them and get metadata
@@ -239,7 +240,6 @@ Some things I like about node:
 
 - async
 - community
-- javascript
 - npm
 
 ----
@@ -248,7 +248,6 @@ Some things I like about node:
 
 - async
 - community
-- javascript
 - npm
 - STREAMS !!!!
 
@@ -288,6 +287,7 @@ Risk of high latency ==> does not seem realtime
 Better implementation:
 
 request the first piece from many peers
+
 
   |     | <--- piece1 from peer1
   |  S  |   |- piece1 from peer2
@@ -367,14 +367,14 @@ https://github.com/mafintosh/peerflix
 ----
 
 
-What if we could mount the torrent in files instantly
-and just access them as any file?
+MAD SCIENCE TIME!
 
 
 ----
 
 
-MAD SCIENCE TIME!
+What if we could mount the torrent in files instantly
+and just access them as any file?
 
 
 ----
