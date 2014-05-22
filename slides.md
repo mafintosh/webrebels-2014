@@ -444,11 +444,12 @@ https://github.com/mafintosh/torrent-mount
 ----
 
 
-People to follow
+People and things to follow
 
   feross      https://github.com/feross
   webtorrent  https://github.com/feross/webtorrent
 
+Get involved!
 
 ----
 
