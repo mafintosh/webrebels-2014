@@ -423,7 +423,7 @@ People to follow
 
 ----
 
-Tak! Questions?
+Takk! Questions?
 
   Mathias Buus, @mafintosh
   https://github.com/mafintosh
